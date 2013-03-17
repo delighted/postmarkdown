@@ -25,7 +25,7 @@ class PostsController < ApplicationController
     options[:visible] = true
     @collection ||= begin
       posts = Post.where(options)
-      posts = Kaminari.paginate_array(posts).page(params[:page]).per(posts_per_page)
+      posts = posts.paginate(page: params[:page], per_page: posts_per_page)
       posts
     end
   end
