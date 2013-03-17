@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def collection
     @collection ||= begin
       posts = Post.where(params.slice(:year, :month, :day))
-      posts = Kaminari.paginate_array(posts).page(params[:page]).per(posts_per_page)
+      posts = posts.paginate(page: params[:page], per_page: posts_per_page)
       posts
     end
   end

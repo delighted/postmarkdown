@@ -5,7 +5,8 @@ module Postmarkdown
   require 'rdiscount'
   require 'nokogiri'
   require 'haml'
-  require 'kaminari'
+  require 'will_paginate'
+  require 'will_paginate/array'
 
   class Engine < Rails::Engine
   end
