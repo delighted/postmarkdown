@@ -15,6 +15,6 @@ module PostHelper
   end
 
   def post_content_html(post)
-    RDiscount.new(render(:inline => post.content)).to_html.html_safe
+    RDiscount.new(render(:inline => post.content), :smart).to_html.html_safe
   end
 end
