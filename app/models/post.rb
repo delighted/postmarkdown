@@ -24,6 +24,10 @@ class Post
     end
   end
 
+  def persisted?
+    true
+  end
+
   def to_param
     case permalink_format
     when :day   then "%04d/%02d/%02d/%s" % [year, month, day, slug]
