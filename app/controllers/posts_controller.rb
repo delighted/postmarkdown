@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   helper_method :resource
 
   def collection
-    options = params.slice(:year, :month, :day)
+    options = params.permit(:year, :month, :day).to_h
     options[:visible] = true
     @collection ||= begin
       posts = Post.where(options)
